@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+
+{% block head %}
+
+<title>Contact</title>
+
+{% endblock %}
+
+{% block body %}
+
+
+<div class="overflow-hidden">
+    <div class="background-contact">
+        <h1>Contact</h1>
+        <form action="" method="POST" class="position-absolute top-50 start-50 translate-middle w-25 h-50 shadow p-4 rounded d-flex flex-column justify-content-between bg-light">
+
+            {% csrf_token %}
+
+            {{ contact_form.as_table }}
+
+            <button type="submit" class="btn btn-primary mt-2">Send</button>
+
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}
