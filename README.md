@@ -27,7 +27,6 @@ Las URLs utilizadas en el proyecto y su contenido son:
         La clase "Contact" en el archivo models.py
         El template "contact.html" (herencia utilizada, padre "index.html")
 
-    
 
 - http://localhost:8000search/
     En ella se puede buscar un posteo. La busqueda se hace utilizando form queries, esto permite que se busque todo posteo en el cual el termino a buscar coincida con el campo author, subject o content ( buscar por ejemplo la palabra: "test")
@@ -37,4 +36,4 @@ Las URLs utilizadas en el proyecto y su contenido son:
         La clase "Publication" en el archivo models.py
         El template "search.html" (herencia utilizada, padre "index.html")
 
-
+Cada una de ellas pueden ser accedidas a traves del Header el cual contiene links para cada una.
