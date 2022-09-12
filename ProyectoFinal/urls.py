@@ -10,6 +10,7 @@ urlpatterns = [
     path('sign_up/', sign_up, name='signUp'),
     path('contact/', contact, name='contact'),
     path('search/', search, name='search'),
-    path('UserAdmin/', include('UserAdmin.urls'))
+    path('UserAdmin/', include('UserAdmin.urls')),
+    path('Messages/', include('Messages.urls'))
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
