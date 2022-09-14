@@ -203,6 +203,12 @@
     padding: 20px
 }
 
+.chat .chat-message-bottom {
+    padding: 20px
+    position: absolute;
+    bottom: 10px;
+}
+
 .online,
 .offline,
 .me {
