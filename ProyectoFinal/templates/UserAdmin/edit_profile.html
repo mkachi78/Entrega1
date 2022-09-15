@@ -1,0 +1,39 @@
+{% extends 'index.html' %}
+
+{% block head %}
+
+<title>{{ title}}</title>
+
+{% endblock %}
+
+{% block body %}
+
+ {% load static %}
+
+    {% if messages %}
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+    {% endif %}
+
+
+<div class="overflow-hidden">
+    <div class="background-signUp">
+        <h1>{{ title }}</h1>
+        <form action="" method="POST" enctype="multipart/form-data" class="position-absolute top-50 start-50 translate-middle w-25 h-50 shadow p-4 rounded d-flex flex-column justify-content-between bg-light">
+
+            {% csrf_token %}
+
+            {{ form.as_div }}
+
+            <button type="submit" class="btn btn-primary">{{ title }}</button>
+            <br>
+            <button type="button" class="btn btn-secondary" onclick="history.back()">Close</button>
+
+
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

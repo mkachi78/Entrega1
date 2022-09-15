@@ -1,0 +1,39 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+    {% block body %}
+
+    <img src="{{user.profile.imagen.url}}" alt="" style="avatar;
+            width:100px;
+            height:auto;
+            border: solid 1px #CCC"/>
+    <a href="{% url 'EditImage' %}">
+         <img alt="" src="{% static 'img/edit_icon.png' %}" style=" width:25px; height:auto;border: solid 1px #CCC" >
+    </a>
+    <br>
+    <br>
+    <h1>{{user.first_name}} {{user.last_name}}</h1>
+    <h5>{{user.username}}</h5>
+    <br>
+    <b>Correo Electrónico:</b>
+    <h5>{{user.email}}</h5>
+    <a href="{% url 'EditUser' %}">
+         <img alt="" src="{% static 'img/edit_icon.png' %}" style=" width:25px; height:auto;border: solid 1px #CCC" >
+    </a>
+    <br>
+    <hr>
+    <br>
+    <b>Sobre mí:</b>
+    <h5>{{user.profile.description}}</h5>
+    <br>
+    <h5>{{user.profile.webpage}}</h5>
+    <br>
+    <a href="{% url 'EditProfile' %}">
+         <img alt="" src="{% static 'img/edit_icon.png' %}" style=" width:25px; height:auto;border: solid 1px #CCC" >
+    </a>
+    <hr>
+    <br>
+    <a class="nav-link " aria-current="page" href="{% url 'ChangePassword' %}">Cambiar Password</a>
+
+    {% endblock %}
