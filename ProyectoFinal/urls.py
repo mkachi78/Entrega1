@@ -2,7 +2,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
-from sistem.views import search, sign_up, contact, index
+from sistem.views import search, sign_up, contact, index, aboutUs
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -11,6 +11,7 @@ urlpatterns = [
     path('contact/', contact, name='contact'),
     path('search/', search, name='search'),
     path('UserAdmin/', include('UserAdmin.urls')),
-    path('Messages/', include('Messages.urls'))
+    path('Messages/', include('Messages.urls')),
+    path('AboutUs/', aboutUs, name ='aboutUs'),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

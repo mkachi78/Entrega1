@@ -64,3 +64,7 @@ def search(request):
         'posts':post_search,
         }
     return render( request ,'apps/search.html',context)
+
+
+def aboutUs(request):
+    return render (request, 'apps/about.html')
