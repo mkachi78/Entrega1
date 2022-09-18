@@ -19,7 +19,7 @@
 <body>
     <div class="container-fluid m-0 p-0">
         <header>
-            <nav class="navbar navbar-expand-lg bg-light">
+            <nav class="navbar navbar-expand-lg bg-light paddingLR">
                 <div class="container-fluid">
                     <!--<a class="navbar-brand ">Logo</a>-->
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -33,14 +33,19 @@
                                 <a class="nav-link " aria-current="page" href="{% url 'home' %}">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link " aria-current="page" href="{% url 'aboutUs' %}">About Us</a>
+                                <a class="nav-link " aria-current="page" href="{% url 'viewPages' %}">Pages</a>
                             </li>
+                            
                             {%if user.is_authenticated%}
                             <li class="nav-item">
-                                <a class="nav-link " aria-current="page" href="{% url 'MessagesMessenger' user.id %}">Messages</a>
+                                <a class="nav-link " aria-current="page"
+                                    href="{% url 'MessagesMessenger' user.id %}">Messages</a>
                             </li>
-        
+
                             {% endif%}
+                            <li class="nav-item">
+                                <a class="nav-link " aria-current="page" href="{% url 'aboutUs' %}">About Us</a>
+                            </li>
                             <!--
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -74,39 +79,34 @@
                             </li>
                         
                             -->
-                            
+
                         </ul>
-                        <div align= right >
-                        <ul  class="navbar-nav me-auto mb-2 mb-lg-0" >
-                            {%if user.is_authenticated%}
-                            <li><img class="avatar" src="{{user.profile.imagen.url}}" alt="Avatar de Usuario"></li>
-                            <li class="nav-item dropdown" >
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
-                                    {{user.get_username}}
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="{% url 'ViewProfile'%}">Profile</a></li>
+                        <div align=right>
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                {%if user.is_authenticated%}
+                                <li><img class="avatar" src="{{user.profile.imagen.url}}" alt="Avatar de Usuario"></li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        {{user.get_username}}
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="{% url 'ViewProfile'%}">Profile</a></li>
                                         <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item" href="{% url 'UserLogout' %}">Log Out</a></li>
-                                </ul>
+                                </li>
+                                <li><a class="dropdown-item" href="{% url 'UserLogout' %}">Log Out</a></li>
+                            </ul>
                             </li>
                             {%else%}
-                            <a href="{% url 'UserRegister'%}" align=right><button class="btn btn-outline-success" >Sign Up</button></a>
+                            <a href="{% url 'UserRegister'%}" align=right><button class="btn btn-outline-success">Sign
+                                    Up</button></a>
                             <a style='margin:5px;'></a>
-                            <a href="{% url 'UserLogin'%}" align=right><button class="btn btn-outline-success" >Log In</button></a>
+                            <a href="{% url 'UserLogin'%}" align=right><button class="btn btn-outline-success">Log
+                                    In</button></a>
                             {%endif%}
-                        </ul>
-                        <div>
-                            
-                         <!-- 
-                        <form class="d-flex" role="search">
-                          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">Search</button>
-                            
-                        </form>
-                        -->
+                            </ul>
+
+                        </div>
                     </div>
                 </div>
             </nav>
@@ -116,57 +116,29 @@
 
             {% block body%}
 
-            <h1 class="mb-3 ms-5">Publications</h1>
-
-            <button type="button" class="btn btn-primary ms-5" data-bs-toggle="modal" data-bs-target="#exampleModal" >Create publication</button>
-
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">New publication</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="container-home">
+                <div class="banner-home">
+                    <div>
+                        <div class="paddingLR">
+                            <h2 >Start posting what you think!</h2>
+                            {%if user.is_authenticated%}
+                            <a href="{% url 'createPage'%}"><button class="btn-color-primary btn btn-primary">Now!</button></a>
+                            {% else %}
+                            <a href="{% url 'UserLogin'%}"><button class="btn-color-primary btn btn-primary">Now!</button></a>
+                            {%endif%}
                         </div>
-                        <div class="modal-body">
-                            <form action="" method="POST" >
-
-                                {% csrf_token %}
+                    </div>
+                </div>
                 
-                                {{ publication_form.as_div }}
-                
-                                
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-primary">Send</button>
-                                </div>
-                            </form>
+                <div class="banner-pages">
+                    <div>
+                        <div class="paddingLR">
+                            <h2 >See what people post!</h2>
+                            <a href="{% url 'viewPages' %}"><button class="btn-color-primary btn btn-primary">Look!</button></a>
                         </div>
-                        
                     </div>
                 </div>
             </div>
-
-
-<!--All Posts Section-->
-            
-            <h3 class="mb-5 mt-5 ps-5 pe-5">Feed</h3>
-            <div class="ps-5 pe-5">
-                {% for publication in publication_list %}
-                <div class="card mb-3">
-                    <div class="card-header">
-                        {{publication.author}}
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">{{publication.subject}}</h5>
-                        <hr class="divider">
-                        <p class="card-text">{{publication.content}}</p>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-
-
             {% endblock %}
 
         </div>

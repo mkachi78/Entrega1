@@ -1,0 +1,47 @@
+{% extends 'index.html' %}
+
+{% block head %}
+
+    <title>Edit page</title>
+
+{% endblock %}
+
+{% block container %}
+<div class="container-edit-page-view ">
+{% endblock %}
+
+{% block body %}
+<div class="container-edit-page">
+    <div class="container-page-edit shadow-lg">
+        <h1>Edit page</h1>
+        <form action="" method="POST" enctype="multipart/form-data">
+    
+            {% csrf_token %}
+    
+            {{ publication_form.as_div }}
+    
+            <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+    </div>
+</div>
+
+
+
+{% endblock %}
+
+
+
+<!-- <div class="container-create-page">
+    <div class="container-page-create shadow-lg">
+        <h1>New page</h1>
+        <form action="" method="POST">
+    
+            {% csrf_token %}
+    
+            {{ publication_form.as_div }}
+    
+            <button type="submit" class="btn btn-primary">Create</button>
+    
+        </form>
+    </div>
+</div> -->

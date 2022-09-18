@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+
+
+
+
+{% block body %}
+{% load static %}
+<div class="">
+    <div class="container-page-img" style="background-image: url('/media/{{publication.imagen}}') ; background-position: center; background-repeat: no-repeat;background-size: cover;
+    background-attachment: fixed;">
+        <!-- <img src="/media/{{publication.imagen}}" alt=""> -->
+        <div>
+            <h1>{{publication.title}}</h1>
+            <h3>{{publication.subject}}</h3>
+            <p class="fw-semibold fs-5">Created: {{publication.date_create}}</p>
+            <p class="fw-semibold fs-5">Author: {{publication.author}}</p>
+            
+        </div>
+    </div>
+    <div class="container-page-content paddingLR">
+        <p>{{publication.content}}</p>
+    </div>
+    
+</div>
+
+    
+    
+
+
+
+{% endblock %}

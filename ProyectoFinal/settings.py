@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'sistem',
     'UserAdmin',
     'Messages',
+    'Pages'
 ]
 
 MIDDLEWARE = [

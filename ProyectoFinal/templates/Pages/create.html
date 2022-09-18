@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+
+{% block head %}
+
+    <title>New Page</title>
+
+{% endblock %}
+{% block container %}
+<div class="container-create-page-view ">
+{% endblock %}
+
+{% block body %}
+
+<div class="container-create-page">
+    <div class="container-page-create shadow-lg">
+        <h1>New page</h1>
+        <form action="" method="POST" enctype="multipart/form-data">
+    
+            {% csrf_token %}
+    
+            {{ publication_form.as_div }}
+    
+            <button type="submit" class="btn btn-primary">Create</button>
+    
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

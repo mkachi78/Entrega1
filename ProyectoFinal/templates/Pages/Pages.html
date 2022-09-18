@@ -1,0 +1,51 @@
+{% extends 'index.html' %}
+
+
+{% load static %}
+
+{% block body%}
+<div class="paddingLR">
+    <h1 class="mb-3 ">Publications</h1>
+    {%if user.is_authenticated%}
+    <a href="{% url 'createPage'%}" class="btn btn-primary btn-color-primary">New page</a>
+    {%endif%}
+
+    <!--All Posts Section-->
+
+    <h3 class="mb-5 mt-5 ">Feed</h3>
+    <div class="card-container">
+        {% for publication in publication_list %}
+        <div class="card m-2 shadow " style="width: 18rem;">
+            <div class="card-header">
+                <h5>{{publication.title}}</h5>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{publication.subject}}</h5>
+                <p>Author: {{publication.author}}</p>
+                <p>Created: {{publication.date_create}}</p>
+                <hr class="divider">
+                <div class="card-btn">
+                    {%if user.id == publication.author_id%}
+                    <a href="{% url 'deletePage' publication.id  %}" class="">
+                        <img alt="" src="{% static 'img/delete.png' %}">
+                    </a>
+                    <a href="{% url 'viewPage' publication.id  %}">
+                        <img alt="" src="{% static 'img/more.png' %}">
+                    </a>
+                    <a href="{% url 'updatePage' publication.id  %}" class="">
+                        <img alt="" src="{% static 'img/edit.png' %}">
+                    </a>
+                    {% else %}
+                    <a href="{% url 'viewPage' publication.id  %}">
+                        <img alt="" src="{% static 'img/more.png' %}">
+                    </a>
+                    {%endif%}
+
+                </div>
+
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endblock %}
+</div>
