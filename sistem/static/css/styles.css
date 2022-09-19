@@ -1,8 +1,42 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
+
+footer {
+    width: 100%;
+    height: 250px;
+    background-color: #444;
+    padding: 50px;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+    transition: all 500ms;
+}
+footer a :hover{
+    color: rgb(255, 166, 141);
+}
+
+footer h2 {
+    background: -webkit-linear-gradient(90deg, rgba(255, 166, 141, 1) 0%, rgba(253, 58, 132, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 72px;
+}
+
+.nav-footer {
+    display: flex;
+    flex-direction: column;
+}
+
 .background-signUp {
     background-image: url('../img/signUp.jpeg');
     background-position: center;
@@ -13,6 +47,7 @@
     height: 100vh;
 
 }
+
 
 .container-index {
     width: 100vw;
@@ -89,11 +124,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 100vh;
 }
 
 .container-page-create {
     border-radius: 15px;
-    margin-top: 50px;
     width: 1500px;
     height: 800px;
     padding: 50px;
@@ -103,11 +138,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 100vh;
 }
 
 .container-page-edit {
     border-radius: 15px;
-    margin-top: 50px;
     width: 1500px;
     height: 800px;
     padding: 50px;
@@ -115,10 +150,12 @@
 
 
 /* Estilos view de pages*/
-
+.container-pages{
+    height: 100vh;
+}
 .container-page-img {
 
-    width: 100vw;
+    width: 100%;
     height: 500px;
     position: relative;
 }
@@ -168,10 +205,15 @@
     height: 25px;
 }
 
+.container-page-view{
+    min-height: 100vh;
+}
+
 /* Estilos pagina home */
-.container-home{
+.container-home {
     overflow-x: hidden;
 }
+
 .banner-home {
     background-image: url('../img/banner_blog.jpg');
     background-position: center;
@@ -215,6 +257,7 @@
     width: 100vw;
     height: 400px;
 }
+
 .banner-pages div {
     background-color: rgba(0, 0, 0, 0.349);
     width: 100%;
@@ -234,6 +277,34 @@
     height: 50px;
 }
 
+.banner-connected {
+    background-image: url('../img/banner_connected.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100vw;
+    height: 400px;
+}
+
+.banner-connected div {
+    background-color: rgba(0, 0, 0, 0.349);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-connected h2 {
+    color: white;
+}
+
+.banner-connected button {
+    width: 150px;
+    height: 50px;
+}
 
 
 
@@ -252,14 +323,16 @@
     justify-content: center;
     align-items: center;
 }
-.container-about{
+
+.container-about {
     width: 1500px;
     height: 800px;
     background-color: white;
     border-radius: 15px;
     padding: 50px;
 }
-.container-integrantes{
+
+.container-integrantes {
     display: grid;
     grid-template-areas: "i1 i2 i3";
     grid-template-columns: 1fr 1fr 1fr;
@@ -267,11 +340,12 @@
     margin-top: 50px;
     height: 100%;
 }
-.container-integrantes h5{
+
+.container-integrantes h5 {
     text-align: center;
 }
 
-.container-tools{
+.container-tools {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-evenly;
@@ -285,7 +359,16 @@
     width: 100%;
     height: 100%;
 } */
+.container-messages {
+    width: 100vw;
+    height: 100vh;
+}
 
+.box-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .card {
     background: #fff;
@@ -469,7 +552,7 @@
 
 .chat .chat-message-bottom {
     padding: 20px;
-    position: absolute;
+    /* position: absolute; */
     bottom: 10px;
 }
 

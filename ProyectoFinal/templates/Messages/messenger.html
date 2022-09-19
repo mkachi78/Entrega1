@@ -8,9 +8,9 @@
 
 {% block body %}
 
-<div class="container">
-<div class="row clearfix">
-    <div class="col-lg-12">
+<div class="container-messages-view">
+<div class="row clearfix box-message">
+    <div class="container-messages">
         <div class="card chat-app">
             <div id="plist" class="people-list">
                 <div class="input-group">
@@ -18,7 +18,7 @@
                         <form action="" method="POST" class="form-control">
                             {% csrf_token %}
                             {{ search_form.as_table }}
-                            <button type="submit" name="search_user" class="fa fa-send">Buscar</button>
+                            <button type="submit" name="search_user" class="fa fa-send btn-color-primary btn-primary btn">Buscar</button>
                             {% if filtered %}
                             <a href="{% url 'MessagesMessenger' user_id=other_usr.id %}">Borrar Filtro</a>
                             {% endif %}
@@ -92,7 +92,7 @@
                         <form action="" method="POST" class="form-control">
                             {% csrf_token %}
                             {{ message_form.as_table }}
-                            <button type="submit" name="send_message" class="fa fa-send">Enviar</button>
+                            <button type="submit" name="send_message" class="fa fa-send btn-color-primary btn-primary btn">Enviar</button>
                         </form>
                     </div>
                 </div>

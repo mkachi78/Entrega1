@@ -30,6 +30,14 @@ def get_page(request, id):
 
     return render(request, 'Pages/view.html', context)
 
+def get_my_pages(request, id):
+    publication = Pages.objects.filter(author_id = id)
+    context = {
+        'publication_list': publication
+    } 
+
+    return render(request, 'Pages/myPages.html', context)
+
 @login_required
 def delete_page(request,id):
     Pages.objects.get(id=id).delete()
