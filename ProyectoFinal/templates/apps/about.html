@@ -1,18 +1,47 @@
 {% extends 'index.html' %}
-
+{% load static %}
 {% block head %}
 
 <title>About Us</title>
 
 {% endblock %}
-
+{% block container %}
+<div class="container-about-page-view ">
+{% endblock %}
 {% block body %}
 
 
 <div class="overflow-hidden">
     <div class="background-contact">
-        <div class="position-absolute top-50 start-50 translate-middle w-25 h-50 shadow p-4 rounded d-flex flex-column justify-content-between bg-light">
+        <!-- <div class="position-absolute top-50 start-50 translate-middle w-25 h-50 shadow p-4 rounded d-flex flex-column justify-content-between bg-light">
         <p > Proyecto final del equipo Kachinovsky, Gonzalez, Rivero </p>
+        </div> -->
+        <div class="container-about shadow-lg">
+            <div>
+                <h1>About Us</h1>
+                <p>Proyecto blog para entrega final del curso Python de CoderHouse</p>
+                <p>Herramientas utilizadas:</p>
+                <div class="container-tools">
+                    <img alt="" src="{% static 'img/python.png' %}">
+                    <img alt="" src="{% static 'img/django.png' %}">
+                    <img alt="" src="{% static 'img/html.png' %}">
+                    <img alt="" src="{% static 'img/css.png' %}">
+                </div>
+                <div class="container-integrantes">
+                    <div>
+                        <h5>Martin Kachinovsky</h5>
+                        <p>Info</p>
+                    </div>
+                    <div>
+                        <h5>Mario Gonzalez</h5>
+                        <p>Info</p>
+                    </div>
+                    <div>
+                        <h5>Martina Rivero</h5>
+                        <p>Info</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
