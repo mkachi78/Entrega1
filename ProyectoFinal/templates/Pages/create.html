@@ -17,8 +17,9 @@
         <form action="" method="POST" enctype="multipart/form-data">
     
             {% csrf_token %}
-    
-            {{ publication_form.as_div }}
+            {{ publication_form.media }}
+            {{ publication_form.as_p }}
+            <!--{{ publication_form.as_div }}-->
     
             <button type="submit" class="btn btn-primary">Create</button>
     

@@ -18,7 +18,8 @@
     
             {% csrf_token %}
     
-            {{ publication_form.as_div }}
+            {{ publication_form.media }}
+            {{ publication_form.as_p }}
     
             <button type="submit" class="btn btn-primary">Send</button>
         </form>
