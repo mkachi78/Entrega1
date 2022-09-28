@@ -16,3 +16,4 @@ Django
 HTML
 CSS
 Bootstrap
+Ckeditor
